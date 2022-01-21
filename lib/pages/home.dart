@@ -12,7 +12,16 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text("Home Screen"),
+        child: Column(
+          children: [
+            ElevatedButton.icon(
+                onPressed:() {
+                  Navigator.pushNamed(context, '/location');
+                } ,
+                icon: const Icon(Icons.edit_location),
+                label: const Text('Edit Location'))
+          ],
+        ),
       ),
     );
   }
