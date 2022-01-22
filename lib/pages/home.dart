@@ -29,22 +29,22 @@ class _HomeState extends State<Home> {
                   } ,
                   icon: const Icon(Icons.edit_location),
                   label: const Text('Edit Location')),
-              SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     data?['location'] ?? "",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20.0,
                       letterSpacing: 2.0
                   ),)
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Text(
                 data?['time'] ?? "",
-                style:TextStyle(
+                style:const TextStyle(
                   fontSize: 66.0
                 )
               )
