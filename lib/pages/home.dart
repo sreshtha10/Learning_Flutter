@@ -38,8 +38,14 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 ElevatedButton.icon(
-                    onPressed:() {
-                      Navigator.pushNamed(context, '/location');
+                    onPressed:() async {
+                     dynamic result = await Navigator.pushNamed(context, '/location');
+                     setState(() {
+                       data?['time'] = result['time'];
+                       data?['location'] = result['location'];
+                       data?['isDayTime'] = result['isDayTime'];
+                       data?['flag'] = result['flag'];
+                     });
                     } ,
                     icon: const Icon(Icons.edit_location),
                     label: Text(

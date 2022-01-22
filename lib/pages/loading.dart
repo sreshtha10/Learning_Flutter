@@ -11,9 +11,9 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
+  Map? data;
 
-  Future<void> setUpWorldTime() async {
-    WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png' ,url: "Europe/Berlin");
+  Future<void> setUpWorldTime(WorldTime instance) async {
     await instance.getData();
     Navigator.pushReplacementNamed(context,'/home',arguments: {
       'location':instance.location,
@@ -27,10 +27,11 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
-    setUpWorldTime();
+    setUpWorldTime(WorldTime(location: 'Berlin', flag: 'germany.png' ,url: "Europe/Berlin"));
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.blue[900],
       body: const Center(
