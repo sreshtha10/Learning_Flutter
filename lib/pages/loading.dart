@@ -13,7 +13,7 @@ class _LoadingState extends State<Loading> {
   String time = 'loading';
 
   Future<void> setUpWorldTime() async {
-    WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png' ,url: "Europe/Berlin");
+    WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png' ,url: "EuropeBerlin");
     await instance.getData();
     setState(() {
       time = instance.time.substring(0,instance.time.length-1);
